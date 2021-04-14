@@ -61,3 +61,7 @@ func (v *Validation) Required(field interface{}, key string, message string) boo
 func (v *Validation) URL(field interface{}, key string, message string) bool {
 	return v.valid(field, key, message, "url")
 }
+
+func (v *Validation) HasErrors() bool {
+	return len(v.Errors) > 0
+}
